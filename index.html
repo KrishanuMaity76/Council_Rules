@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+
+<!-- The D.C. Council Rules, presented in a web-friendly format -->
+<!-- License: CC0. -->
+
 <html lang="en">
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,15 +16,27 @@
 body {
 	padding-top: 50px;
 }
+.navbar-header {
+	float:none;
+	text-align: center;
+}
+
+h1 {color:#858585;}
+h2 {color:#336699;}
+h3 {color:#e74944;}
+
 </style>
+
 
 </head>
 
 <body>
 
 <nav id="nav_topbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+<div class="container">
 <div class="navbar-header">
 <a class="navbar-brand" href="#">RULES OF ORGANIZATION AND PROCEDURE FOR THE COUNCIL OF THE DISTRICT OF COLUMBIA</a>
+</div>
 </div>
 </nav>
 
@@ -43,7 +59,7 @@ body {
 
 </div>
 
-<div class="col-sm-10">
+<div id="rules_container" class="col-sm-10">
 
 <title id="rules-of-organization-and-procedure-for-the-council-of-the-district-of-columbia">RULES OF ORGANIZATION AND PROCEDURE FOR THE COUNCIL OF THE DISTRICT OF COLUMBIA</title>
 <title id="council-period-20-current-through-october-3-2013">COUNCIL PERIOD 20 (Current through October 3, 2013)</title>
@@ -169,7 +185,7 @@ body {
 <p>Metropolitan Washington Airports Authority</p>
 <p>Metropolitan Washington Council of Governments</p>
 <p>National Capital Planning Commission</p>
-<p>git@github.com:vzvenyach/Council_Rules.gitOffice of Budget and Planning</p>
+<p>Office of Budget and Planning</p>
 <p>Office of Contracting and Procurement</p>
 <p>Office of Labor Relations and Collective Bargaining</p>
 <p>Office of Planning</p>
@@ -1238,6 +1254,14 @@ $("h1").each(function(i){
 $("#nav_sidebar").replaceWith(
 	outString + '</ul>'
 );
+
+/**
+//This function would allow for internal anchoring of Rules. Only problem is that the h3 headers are defined wrong... Will fix later.
+$(document).ready (function (){
+	var ruleString = $("#rules_container").html().replace(/(rule\s)(\d+)(\(\w+\))?/ig,'<a href="#$2">$1$2$3</a>');
+	$("#rules_container").replaceWith(ruleString);
+});
+**/
 
 </script>
 
